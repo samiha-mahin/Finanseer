@@ -4,9 +4,9 @@ import React from 'react';
 const Row2 = () => {
   return (
     <>
-      <Card className="bg-white p-4" style={{ gridArea: 'd' }}>Box D</Card>
-      <Card className="bg-white p-4" style={{ gridArea: 'e' }}>Box E</Card>
-      <Card className="bg-white p-4" style={{ gridArea: 'f' }}>Box F</Card>
+      <Card className="bg-zinc-700 p-4 border-0" style={{ gridArea: 'd' }}>Box D</Card>
+      <Card className="bg-zinc-700 p-4 border-0" style={{ gridArea: 'e' }}>Box E</Card>
+      <Card className="bg-zinc-700 p-4 border-0" style={{ gridArea: 'f' }}>Box F</Card>
     </>
   );
 };
