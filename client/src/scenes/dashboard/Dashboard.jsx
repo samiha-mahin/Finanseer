@@ -52,7 +52,7 @@ const Dashboard = () => {
 
   return (
     <div
-      className={`w-full h-full grid gap-6 p-4 ${
+      className={`w-full h-full grid gap-6 px-6 pb-6 ${
         isAboveMediumScreens
           ? "grid-cols-3 grid-rows-[repeat(10,_minmax(60px,_1fr))]"
           : "grid-cols-1 auto-rows-[80px]"
