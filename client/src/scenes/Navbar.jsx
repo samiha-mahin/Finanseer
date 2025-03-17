@@ -11,7 +11,7 @@ const Navbar = () => {
       {/* LEFT SIDE */}
       <div className="flex items-center gap-3">
         <BarChart3 className="w-7 h-7" />
-        <span className="text-lg font-semibold">FinTrack</span>
+        <span className="text-lg font-semibold">Finanseer</span>
       </div>
 
       {/* HAMBURGER MENU (MOBILE) */}
