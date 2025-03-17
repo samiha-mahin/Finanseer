@@ -1,9 +1,14 @@
-import React from 'react'
+import { Card } from '@/components/ui/card';
+import React from 'react';
 
 const Row2 = () => {
   return (
-    <div>Row2</div>
-  )
-}
+    <>
+      <Card className="bg-white p-4" style={{ gridArea: 'd' }}>Box D</Card>
+      <Card className="bg-white p-4" style={{ gridArea: 'e' }}>Box E</Card>
+      <Card className="bg-white p-4" style={{ gridArea: 'f' }}>Box F</Card>
+    </>
+  );
+};
 
-export default Row2
+export default Row2;
