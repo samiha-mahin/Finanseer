@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center mx-4 p-4 text-gray-300 bg-gray-900">
+    <nav className="flex justify-between items-center mx-4 p-4 text-gray-300">
       {/* LEFT SIDE */}
       <div className="flex items-center gap-3">
         <BarChart3 className="w-7 h-7" />
