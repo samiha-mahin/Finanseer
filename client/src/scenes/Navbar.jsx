@@ -24,9 +24,7 @@ const Navbar = () => {
 
       {/* RIGHT SIDE (MENU) */}
       <div
-        className={`md:flex gap-8 ${
-          isOpen ? "flex flex-col absolute top-16 left-0 w-full bg-gray-900 p-4" : "hidden"
-        } md:static md:w-auto md:p-0`}
+        className={`md:flex gap-8 ${isOpen ? "flex flex-col absolute top-16 left-0 w-full bg-zinc-700 p-4 rounded-sm z-20" : "hidden"} md:static md:w-auto md:p-0`}
       >
         <div className="hover:text-primary">
           <Link

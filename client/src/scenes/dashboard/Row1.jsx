@@ -69,8 +69,8 @@ const Row1 = () => {
         className="bg-zinc-800 p-4 border-0 shadow-xl shadow-black/70 drop-shadow-2xl"
         style={{ gridArea: "a" }}
       >
-        <div className="text-white text-lg font-semibold">
-          Revenue and Expenses
+        <div className="pt-5">
+          <h1 className="text-white text-md font-semibold">Revenue and Expenses</h1>
         </div>
         <div className="text-zinc-400 text-sm">
           Top line represents revenue, bottom line represents expenses
@@ -78,7 +78,7 @@ const Row1 = () => {
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={revenueExpenses}
-            margin={{ top: 15, right: 25, left: -10, bottom: 60 }}
+            margin={{ top: 15, right: 25, left: -10, bottom: 40 }}
           >
             <defs>
               <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
@@ -90,18 +90,31 @@ const Row1 = () => {
                 <stop offset="95%" stopColor="#EF4444" stopOpacity={0} />
               </linearGradient>
             </defs>
+            <CartesianGrid
+              stroke="#ffffff33"
+              strokeDasharray="3 3"
+              vertical={false}
+            />
             <XAxis
               dataKey="name"
               tickLine={false}
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: "12px", fontWeight: 500 }}
             />
             <YAxis
               tickLine={false}
               axisLine={{ strokeWidth: "0" }}
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: "12px", fontWeight: 500 }}
               domain={[8000, 23000]}
             />
-            <Tooltip />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "#333",
+                borderRadius: "8px",
+                border: "none",
+                boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+              }}
+              labelStyle={{ color: "#fff", fontWeight: "bold" }}
+            />
             <Area
               type="monotone"
               dataKey="revenue"
@@ -126,49 +139,64 @@ const Row1 = () => {
         className="bg-zinc-800 p-4 border-0 shadow-xl shadow-black/70 drop-shadow-2xl"
         style={{ gridArea: "b" }}
       >
-        <div className="text-white text-lg font-semibold">
-          Profit and Revenue
+        <div className="pt-5">
+          <h1 className="text-white text-md font-semibold">Profit and Revenue</h1>
         </div>
         <div className="text-zinc-400 text-sm">
-          Top line represents revenue, bottom line represents expenses
+          Top line represents revenue, bottom line represents profit
         </div>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={revenueProfit}
-            margin={{ top: 20, right: 0, left: -10, bottom: 55 }}
+            margin={{ top: 20, right: 0, left: -10, bottom: 40 }}
           >
-            <CartesianGrid vertical={false} stroke="#1F2937" />
+            <CartesianGrid vertical={true} stroke="#ffffff33" strokeDasharray="3 3" />
             <XAxis
               dataKey="name"
               tickLine={false}
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: "12px", fontWeight: 500 }}
             />
             <YAxis
               yAxisId="left"
               tickLine={false}
               axisLine={false}
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: "12px", fontWeight: 500 }}
             />
             <YAxis
               yAxisId="right"
               orientation="right"
               tickLine={false}
               axisLine={false}
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: "12px", fontWeight: 500 }}
             />
-            <Tooltip />
-            <Legend height={20} wrapperStyle={{ margin: "0 0 10px 0" }} />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "#333",
+                borderRadius: "8px",
+                border: "none",
+                boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+              }}
+              labelStyle={{ color: "#fff", fontWeight: "bold" }}
+            />
+            <Legend
+              height={10}
+              wrapperStyle={{ margin: "0 0 10px 0", color: "#fff" }}
+            />
             <Line
               yAxisId="left"
               type="monotone"
               dataKey="profit"
               stroke="#10B981"
+              strokeWidth={1}
+              dot={{ stroke: "#10B981", strokeWidth: 2, r: 2 }}
             />
             <Line
               yAxisId="right"
               type="monotone"
               dataKey="revenue"
               stroke="#3B82F6"
+              strokeWidth={1}
+              dot={{ stroke: "#3B82F6", strokeWidth: 2, r: 2 }}
             />
           </LineChart>
         </ResponsiveContainer>
@@ -178,8 +206,8 @@ const Row1 = () => {
         className="bg-zinc-800 p-4 border-0 shadow-xl shadow-black/70 drop-shadow-2xl"
         style={{ gridArea: "c" }}
       >
-        <div className="text-white text-lg font-semibold">
-          Revenue Month by Month
+        <div className="pt-5">
+          <h1 className="text-white text-md font-semibold">Revenue Month by Month</h1>
         </div>
         <div className="text-zinc-400 text-sm">
           Graph representing the revenue month by month
@@ -187,7 +215,7 @@ const Row1 = () => {
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={revenue}
-            margin={{ top: 17, right: 15, left: -5, bottom: 58 }}
+            margin={{ top:1, right: 10, left: -5, bottom: 50 }}
           >
             <defs>
               <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
@@ -200,14 +228,22 @@ const Row1 = () => {
               dataKey="name"
               axisLine={false}
               tickLine={false}
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: "12px" }}
             />
             <YAxis
               axisLine={false}
               tickLine={false}
-              style={{ fontSize: "10px" }}
+              style={{ fontSize: "12px" }}
             />
-            <Tooltip />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "#333",
+                borderRadius: "8px",
+                border: "none",
+                boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+              }}
+              labelStyle={{ color: "#fff", fontWeight: "bold" }}
+            />
             <Bar dataKey="revenue" fill="url(#colorRevenue)" />
           </BarChart>
         </ResponsiveContainer>
