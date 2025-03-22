@@ -150,7 +150,11 @@ const Row1 = () => {
             data={revenueProfit}
             margin={{ top: 20, right: 0, left: -10, bottom: 40 }}
           >
-            <CartesianGrid vertical={true} stroke="#ffffff33" strokeDasharray="3 3" />
+            <CartesianGrid
+              stroke="#ffffff33"
+              strokeDasharray="3 3"
+              vertical={false}
+            />
             <XAxis
               dataKey="name"
               tickLine={false}
@@ -223,7 +227,11 @@ const Row1 = () => {
                 <stop offset="95%" stopColor="#3B82F6" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid vertical={false} stroke="#1F2937" />
+            <CartesianGrid
+              stroke="#ffffff33"
+              strokeDasharray="3 3"
+              vertical={false}
+            />
             <XAxis
               dataKey="name"
               axisLine={false}
