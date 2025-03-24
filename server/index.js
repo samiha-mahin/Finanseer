@@ -6,6 +6,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import connectDB from "./utils/db.js"
 import kpiRoutes from "./routes/kpi_route.js"
+import productRoutes from "./routes/product_route.js"
+import transactionRoutes from "./routes/transaction_route.js"
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -19,6 +21,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/kpi", kpiRoutes);
+app.use("/product", productRoutes);
+app.use("/transaction", transactionRoutes);
+
 
 const PORT = process.env.PORT || 5000;
  app.listen (PORT,()=>{
