@@ -1,5 +1,5 @@
 import { Card } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@/components/ui/table';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { PieChart, Pie, Cell } from 'recharts';
 import { useMemo } from 'react';
 import { useGetKpisQuery, useGetProductsQuery, useGetTransactionsQuery } from '@/state/api';
@@ -28,13 +28,13 @@ const Row3 = () => {
   <h2 className="text-white text-lg mb-2">List of Products ({productData.length} products)</h2>
   <div className="overflow-y-auto h-[200px]"> {/* Scrollable container for table body */}
     <Table className="text-white">
-      <TableHead>
+      <TableHeader>
         <TableRow>
-          <TableCell>ID</TableCell>
-          <TableCell>Expense</TableCell>
-          <TableCell>Price</TableCell>
+          <TableHead className="text-white">ID</TableHead>
+          <TableHead className="text-white">Expense</TableHead>
+          <TableHead className="text-white">Price</TableHead>
         </TableRow>
-      </TableHead>
+      </TableHeader>
       <TableBody>
         {productData.slice(0, 10).map((item) => (  // Display all data, but only 4 visible at a time
           <TableRow key={item._id}>
@@ -54,14 +54,14 @@ const Row3 = () => {
   <h2 className="text-white text-lg mb-2">Recent Orders ({transactionData.length} latest transactions)</h2>
   <div className="overflow-y-auto h-[250px]"> {/* Scrollable container for table body */}
     <Table className="text-white">
-      <TableHead>
+      <TableHeader >
         <TableRow>
-          <TableCell>ID</TableCell>
-          <TableCell>Buyer</TableCell>
-          <TableCell>Amount</TableCell>
-          <TableCell>Count</TableCell>
+          <TableHead className="text-white">ID</TableHead>
+          <TableHead className="text-white">Buyer</TableHead>
+          <TableHead className="text-white">Amount</TableHead>
+          <TableHead className="text-white">Count</TableHead>
         </TableRow>
-      </TableHead>
+      </TableHeader>
       <TableBody>
         {transactionData.map((item) => (
           <TableRow key={item._id}>
@@ -80,7 +80,7 @@ const Row3 = () => {
       {/* Pie Chart */}
       <Card className="bg-zinc-800 p-4 shadow-xl border-0 drop-shadow-2xl" style={{ gridArea: 'i' }}>
         <h2 className="text-white text-lg mb-2">Expense Breakdown By Category</h2>
-        <div className="flex justify-between gap-4 text-center">
+        <div className="flex justify-between gap-3 text-center">
           {pieChartData?.map((data, i) => (
             <div key={`${data[0].name}-${i}`} className="flex flex-col items-center">
               <PieChart width={80} height={70}>
