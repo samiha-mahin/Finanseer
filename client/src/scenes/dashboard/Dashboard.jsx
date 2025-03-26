@@ -54,7 +54,7 @@ const Dashboard = () => {
     <div
       className={`w-full h-full grid gap-6 px-6 pb-6 ${
         isAboveMediumScreens
-          ? "grid-cols-3 grid-rows-[repeat(10,_minmax(60px,_1fr))]"
+          ? "grid-cols-[repeat(3,_minmax(370px,_1fr))] grid-rows-[repeat(10,_minmax(60px,_1fr))]"
           : "grid-cols-1 auto-rows-[80px]"
       }`}
       style={{
@@ -63,9 +63,9 @@ const Dashboard = () => {
           : gridTemplateSmallScreens,
       }}
     >
-      <Row1/>
-      <Row2/>
-      <Row3/>
+      <Row1 />
+      <Row2 />
+      <Row3 />
     </div>
   );
 };
