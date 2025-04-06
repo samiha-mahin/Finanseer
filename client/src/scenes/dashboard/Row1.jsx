@@ -62,6 +62,7 @@ const Row1 = () => {
   if (!revenue || !revenueExpenses || !revenueProfit) {
     return <div>Loading...</div>;
   }
+  
 
   return (
     <>
