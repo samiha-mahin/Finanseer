@@ -63,7 +63,6 @@ const Row1 = () => {
     return <div>Loading...</div>;
   }
   
-
   return (
     <>
       <Card
