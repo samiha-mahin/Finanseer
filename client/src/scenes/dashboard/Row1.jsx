@@ -27,6 +27,7 @@ const Row1 = () => {
       data[0].monthlyData.map(({ month, revenue }) => ({
         name: month.substring(0, 3),  //First 3 letters of the month ("January" → "Jan")
         revenue: parseFloat(revenue.replace("$", "").replace(",", "")),   //This line removes the dollar sign $ and comma , from the revenue string and converts it to a number.For example:"$12,000" ➡ "12000" ➡ 12000 (number)
+        
       }))
     );
   }, [data]);
