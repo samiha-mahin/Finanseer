@@ -24,10 +24,11 @@ const Row1 = () => {
       data &&
       data[0].monthlyData.map(({ month, revenue }) => ({
         name: month.substring(0, 3),
-        revenue: parseFloat(revenue.replace("$", "").replace(",", "")),
+        revenue: parseFloat(revenue.replace("$", "").replace(",", "")),   //This line removes the dollar sign $ and comma , from the revenue string and converts it to a number.For example:"$12,000" ➡ "12000" ➡ 12000 (number)
       }))
     );
   }, [data]);
+  //useMemo is used to optimize performance — so this calculation only runs when data changes. Think of it like: "Only recalculate if my new monthly report comes in."
 
   const revenueExpenses = useMemo(() => {
     return (
