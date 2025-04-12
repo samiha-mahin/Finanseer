@@ -33,7 +33,6 @@ const Row1 = () => {
   }, [data]);
 
   const revenueExpenses = useMemo(() => {
-    
     return (
       data &&
       data[0].monthlyData.map(({ month, revenue, expenses }) => ({
