@@ -31,6 +31,7 @@ const Row1 = () => {
       }))
     );
   }, [data]); 
+  
   // for revenue the raw data was like this:
   // const data = [
   //   {
