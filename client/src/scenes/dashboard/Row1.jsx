@@ -37,7 +37,7 @@ const Row1 = () => {
     );
   }, [data]); 
 
-  // for revenue, the raw datas are like this:
+  // for revenue, the raw datas were like this:
   // export const kpis = [
   //   {
   //     monthlyData: [
