@@ -30,7 +30,24 @@ const Row1 = () => {
 
       }))
     );
-  }, [data]);
+  }, [data]); 
+  // for revenue the raw data was like this:
+  // const data = [
+  //   {
+  //     id: "kpi-1",
+  //     monthlyData: [
+  //       { month: "January", revenue: "$12,000" },
+  //       { month: "February", revenue: "$9,500" },
+  //       { month: "March", revenue: "$15,200" }
+  //     ]
+  //   }
+  // ];
+  //  And final revenue which will show in the website like this:
+  // [
+  //   { name: "Jan", revenue: 12000 },
+  //   { name: "Feb", revenue: 9500 },
+  //   { name: "Mar", revenue: 15200 }
+  // ]
 
   const revenueExpenses = useMemo(() => {
     return (
