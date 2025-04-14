@@ -31,8 +31,8 @@ const Row1 = () => {
       }))
     );
   }, [data]); 
-  
-  // for revenue the raw data was like this:
+
+  // for revenue the raw data are like this:
   // const data = [
   //   {
   //     id: "kpi-1",
@@ -43,7 +43,7 @@ const Row1 = () => {
   //     ]
   //   }
   // ];
-  //  And final revenue which will show in the website like this:
+  //  And final revenue which will show in the website are like this:
   // [
   //   { name: "Jan", revenue: 12000 },
   //   { name: "Feb", revenue: 9500 },
