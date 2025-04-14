@@ -23,10 +23,8 @@ const Row1 = () => {
   //   isLoading: true/false,
   //   error: ...
   // }
-
-  //useMemo is used to optimize performance — so this calculation only runs when data changes. Think of it like: "Only recalculate if my new monthly report comes in."
-
   const revenue = useMemo(() => {
+    //useMemo is used to optimize performance — so this calculation only runs when data changes. Think of it like: "Only recalculate if my new monthly report comes in."
     return (
       data &&
       data[0].monthlyData.map(({ month, revenue }) => ({
