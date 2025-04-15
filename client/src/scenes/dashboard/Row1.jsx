@@ -99,7 +99,7 @@ const Row1 = () => {
 
   if (!revenue || !revenueExpenses || !revenueProfit) {
     return <div>Loading...</div>;
-  }
+  } //This line checks if any of the three variables (revenue, revenueExpenses, or revenueProfit) are not ready yet (maybe still being fetched or calculated).It shows a loading message instead of rendering the actual chart or UI.
   
   return (
     <>
