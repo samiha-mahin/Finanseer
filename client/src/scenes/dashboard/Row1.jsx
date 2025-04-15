@@ -82,11 +82,20 @@ const Row1 = () => {
         return {
           name: month.substring(0, 3),
           revenue: revenueAmount,
-          profit: (revenueAmount - expensesAmount).toFixed(2),
+          profit: (revenueAmount - expensesAmount).toFixed(2),//
         };
       })
     );
   }, [data]);
+
+  // Output for revenueProfit would be:
+  // [
+  //   {
+  //     name: "Jan",
+  //     revenue: 10000,
+  //     profit: "7000.00"
+  //   }
+  // ]  
 
   if (!revenue || !revenueExpenses || !revenueProfit) {
     return <div>Loading...</div>;
