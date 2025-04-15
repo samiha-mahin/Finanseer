@@ -82,7 +82,7 @@ const Row1 = () => {
         return {
           name: month.substring(0, 3),
           revenue: revenueAmount,
-          profit: (revenueAmount - expensesAmount).toFixed(2),//
+          profit: (revenueAmount - expensesAmount).toFixed(2), //.toFixed(2) keeps it up to 2 decimal points (like "7000.00")
         };
       })
     );
