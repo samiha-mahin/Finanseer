@@ -63,6 +63,12 @@ const Row1 = () => {
     );
   }, [data]);
 
+  // Output for revenueExpenses would be :
+  // [
+  //   { name: "Jan", revenue: 12000, expenses: 4000 },
+  //   ...
+  // ]
+  
   const revenueProfit = useMemo(() => {
     return (
       data &&
