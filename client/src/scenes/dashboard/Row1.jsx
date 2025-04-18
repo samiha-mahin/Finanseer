@@ -120,8 +120,11 @@ const Row1 = () => {
           >
             <defs>
               <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                {/* {This makes the gradient go from top (0%) to bottom (100%) vertically} */}
                 <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.5} />
+                {/* {At the 5% position from the top, the color is blue (#3B82F6) and semi-transparent (opacity = 0.5).} */}
                 <stop offset="95%" stopColor="#3B82F6" stopOpacity={0} />
+                {/* {At 95% down, it’s still the same blue color, but now fully transparent (opacity = 0).} */}
               </linearGradient>
               <linearGradient id="colorExpenses" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#EF4444" stopOpacity={0.5} />
