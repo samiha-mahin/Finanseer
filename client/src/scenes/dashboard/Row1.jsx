@@ -232,7 +232,7 @@ const Row1 = () => {
               type="monotone"
               dataKey="profit"
               stroke="#10B981"
-              strokeWidth={1}
+              strokeWidth={2}
               dot={{ stroke: "#10B981", strokeWidth: 2, r: 2 }}
             />
             <Line
@@ -240,7 +240,7 @@ const Row1 = () => {
               type="monotone"
               dataKey="revenue"
               stroke="#3B82F6"
-              strokeWidth={1}
+              strokeWidth={2}
               dot={{ stroke: "#3B82F6", strokeWidth: 2, r: 2 }}
             />
           </LineChart>
