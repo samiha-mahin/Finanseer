@@ -62,6 +62,9 @@ const Row2 = () => {
         <div className="pt-5">
           <h1 className="text-white text-md font-semibold">Operational vs Non-Operational Expenses</h1>
         </div>
+        <div className="text-zinc-400 text-sm">
+          Top line represents revenue, bottom line represents expenses
+        </div>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart
             data={operationalExpenses}
