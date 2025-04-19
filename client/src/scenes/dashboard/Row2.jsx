@@ -59,7 +59,9 @@ const Row2 = () => {
         className="bg-zinc-800 p-4 border-0 shadow-xl drop-shadow-2xl"
         style={{ gridArea: "d" }}
       >
-        <h2 className="text-white text-lg mb-4">Operational vs Non-Operational Expenses</h2>
+        <div className="pt-5">
+          <h1 className="text-white text-md font-semibold">Operational vs Non-Operational Expenses</h1>
+        </div>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart
             data={operationalExpenses}
