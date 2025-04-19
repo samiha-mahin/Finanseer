@@ -56,23 +56,34 @@ const Row2 = () => {
     <>
       {/* Operational vs Non-Operational Expenses */}
       <Card
-        className="bg-zinc-800 p-4 border-0 shadow-xl drop-shadow-2xl"
+        className="bg-zinc-800 p-4 border-0 shadow-xl shadow-black/70 drop-shadow-2xl"
         style={{ gridArea: "d" }}
       >
         <div className="pt-5">
           <h1 className="text-white text-md font-semibold">Operational vs Non-Operational Expenses</h1>
         </div>
         <div className="text-zinc-400 text-sm">
-          Top line represents revenue, bottom line represents expenses
+          Top line represents operational expenses,bottom line represents non-operational expenses
         </div>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer  width="100%" height="100%">
           <LineChart
             data={operationalExpenses}
-            margin={{ top: 15, right: 25, left: -10, bottom: 40 }}
+            margin={{ top: 20, right: 0, left: -10, bottom: 60 }}
           >
-            <CartesianGrid stroke="#374151" />
-            <XAxis dataKey="name" tick={{ fill: "white" }} />
-            <YAxis tick={{ fill: "white" }} />
+             <CartesianGrid
+              stroke="#ffffff33"
+              strokeDasharray="3 3"
+              vertical={false}
+            />
+            <XAxis
+              dataKey="name"
+              tickLine={false}
+              style={{ fontSize: "12px", fontWeight: 500 }}
+            />
+            <YAxis 
+            tickLine={false}
+            style={{ fontSize: "12px", fontWeight: 500 }}
+            />
             <Tooltip
               contentStyle={{ backgroundColor: "#1f2937", color: "white" }}
             />
