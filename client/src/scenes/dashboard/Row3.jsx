@@ -50,7 +50,7 @@ const Row3 = () => {
 
 
      {/* Transactions Table */}
-<Card className="bg-zinc-800 p-4 shadow-xl border-0 drop-shadow-2xl" style={{ gridArea: 'h', height: '350px' }}>
+<Card className="bg-zinc-800 p-4 shadow-xl border-0 drop-shadow-2xl" style={{ gridArea: 'h', height: '370px' }}>
   <h2 className="text-white text-lg mb-2">Recent Orders ({transactionData.length} latest transactions)</h2>
   <div className="overflow-y-auto h-[250px]"> {/* Scrollable container for table body */}
     <Table className="text-white">

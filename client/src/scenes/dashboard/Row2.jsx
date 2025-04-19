@@ -72,7 +72,7 @@ const Row2 = () => {
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={operationalExpenses}
-            margin={{ top: 8, right: 0, left: -10, bottom: 60 }}
+            margin={{ top: 8, right: 0, left: -10, bottom:30 }}
           >
             <CartesianGrid
               stroke="#ffffff33"
