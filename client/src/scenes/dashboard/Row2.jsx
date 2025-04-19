@@ -15,6 +15,7 @@ import {
   ScatterChart,
   Scatter,
   ZAxis,
+  Legend,
 } from "recharts";
 
 const pieData = [
@@ -60,17 +61,20 @@ const Row2 = () => {
         style={{ gridArea: "d" }}
       >
         <div className="pt-5">
-          <h1 className="text-white text-md font-semibold">Operational vs Non-Operational Expenses</h1>
+          <h1 className="text-white text-md font-semibold">
+            Operational vs Non-Operational Expenses
+          </h1>
         </div>
         <div className="text-zinc-400 text-sm">
-          Top line represents operational expenses,bottom line represents non-operational expenses
+          Top line represents operational expenses,bottom line represents
+          non-operational expenses
         </div>
-        <ResponsiveContainer  width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={operationalExpenses}
-            margin={{ top: 20, right: 0, left: -10, bottom: 60 }}
+            margin={{ top: 8, right: 0, left: -10, bottom: 60 }}
           >
-             <CartesianGrid
+            <CartesianGrid
               stroke="#ffffff33"
               strokeDasharray="3 3"
               vertical={false}
@@ -80,24 +84,40 @@ const Row2 = () => {
               tickLine={false}
               style={{ fontSize: "12px", fontWeight: 500 }}
             />
-            <YAxis 
-            tickLine={false}
-            style={{ fontSize: "12px", fontWeight: 500 }}
+            <YAxis
+              tickLine={false}
+              style={{ fontSize: "12px", fontWeight: 500 }}
             />
             <Tooltip
-              contentStyle={{ backgroundColor: "#1f2937", color: "white" }}
+              contentStyle={{
+                backgroundColor: "#333",
+                borderRadius: "8px",
+                border: "none",
+                boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+              }}
+              labelStyle={{ color: "#fff", fontWeight: "bold" }}
+            />
+            <Legend
+              height={20}
+              wrapperStyle={{
+                margin: "0 0 10px 0",
+                color: "#fff",
+                fontSize: "10px",
+              }}
             />
             <Line
               type="monotone"
               dataKey="Non Operational Expenses"
               stroke="#f43f5e"
               strokeWidth={2}
+              dot={{ stroke: "#f43f5e", strokeWidth: 2, r: 2 }}
             />
             <Line
               type="monotone"
               dataKey="Operational Expenses"
               stroke="#3b82f6"
               strokeWidth={2}
+              dot={{ stroke: "#3b82f6", strokeWidth: 2, r: 2 }}
             />
           </LineChart>
         </ResponsiveContainer>
@@ -109,28 +129,30 @@ const Row2 = () => {
         style={{ gridArea: "e" }}
       >
         <h2 className="text-white text-lg mb-4">Campaigns and Targets</h2>
-        <div className="flex items-center justify-between">
-          <PieChart width={120} height={120}>
-            <Pie
-              data={pieData}
-              innerRadius={30}
-              outerRadius={50}
-              dataKey="value"
-            >
-              {pieData.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={index === 0 ? "#3b82f6" : "#f43f5e"}
-                />
-              ))}
-            </Pie>
-          </PieChart>
-          <div className="text-white text-center">
-            <p className="text-lg">Target Sales</p>
-            <p className="text-3xl text-blue-400 font-bold">83</p>
-            <p>Finance goals of the campaign</p>
+        <ResponsiveContainer width="100%" height="100%">
+          <div className="flex items-center justify-between">
+            <PieChart width={120} height={120}>
+              <Pie
+                data={pieData}
+                innerRadius={30}
+                outerRadius={50}
+                dataKey="value"
+              >
+                {pieData.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={index === 0 ? "#3b82f6" : "#f43f5e"}
+                  />
+                ))}
+              </Pie>
+            </PieChart>
+            <div className="text-white text-center">
+              <p className="text-lg">Target Sales</p>
+              <p className="text-3xl text-blue-400 font-bold">83</p>
+              <p>Finance goals of the campaign</p>
+            </div>
           </div>
-        </div>
+        </ResponsiveContainer>
       </Card>
 
       {/* Product Prices vs Expenses */}
@@ -139,7 +161,7 @@ const Row2 = () => {
         style={{ gridArea: "f" }}
       >
         <h2 className="text-white text-lg mb-4">Product Prices vs Expenses</h2>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height="100%">
           <ScatterChart margin={{ top: 20, right: 20, bottom: 40, left: 0 }}>
             <CartesianGrid stroke="#374151" />
             <XAxis
