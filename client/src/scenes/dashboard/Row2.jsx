@@ -33,13 +33,13 @@ const Row2 = () => {
         ({ month, operationalExpenses, nonOperationalExpenses }) => ({
           name: month.substring(0, 3),
           "Operational Expenses": parseFloat(
-            operationalExpenses?.toString().replace(/[$,]/g, "") || 0
+            operationalExpenses?.toString().replace(/[$,]/g, "")
           ),
           "Non Operational Expenses": parseFloat(
-            nonOperationalExpenses?.toString().replace(/[$,]/g, "") || 0
+            nonOperationalExpenses?.toString().replace(/[$,]/g, "")
           ),
         })
-      ) || []
+      )
     );
   }, [operationalData]);
 
@@ -47,9 +47,9 @@ const Row2 = () => {
     return (
       productData?.map(({ _id, price, expense }) => ({
         id: _id,
-        price: parseFloat(price?.toString().replace(/[$,]/g, "") || 0),
-        expense: parseFloat(expense?.toString().replace(/[$,]/g, "") || 0),
-      })) || []
+        price: parseFloat(price?.toString().replace(/[$,]/g, "")),
+        expense: parseFloat(expense?.toString().replace(/[$,]/g, "")),
+      }))
     );
   }, [productData]);
 
