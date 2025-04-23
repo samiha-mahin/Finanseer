@@ -50,6 +50,7 @@ const Row2 = () => {
         price: parseFloat(price?.toString().replace("$", "").replace(",", "")),
         expense: parseFloat(expense?.toString().replace("$", "").replace(",", "")),
       }))
+      
     );
   }, [productData]);
 
