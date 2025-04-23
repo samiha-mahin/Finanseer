@@ -33,7 +33,7 @@ const Row2 = () => {
         ({ month, operationalExpenses, nonOperationalExpenses }) => ({
           name: month.substring(0, 3),
           "Operational Expenses": parseFloat(
-            operationalExpenses?.toString().replace(/[$,]/g, "")
+            operationalExpenses?.toString().replace("$", "").replace(",", "")
           ),
           "Non Operational Expenses": parseFloat(
             nonOperationalExpenses?.toString().replace(/[$,]/g, "")
