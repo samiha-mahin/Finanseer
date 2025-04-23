@@ -12,12 +12,12 @@ const Row3 = () => {
   const pieChartData = useMemo(() => {
     if (!kpiData || kpiData.length === 0) return [];
 
-    const totalExpenses = parseFloat(kpiData[0]?.totalExpenses?.toString().replace(/[$,]/g, '') || '0');
+    const totalExpenses = parseFloat(kpiData[0]?.totalExpenses?.toString().replace("$", "").replace(",", ""));
     const expensesByCategory = kpiData[0]?.expensesByCategory || {};
 
     return Object.entries(expensesByCategory).map(([key, value]) => [
       { name: key, value: totalExpenses - value },
-      { name: `${key} of Total`, value: parseFloat(value?.toString().replace(/[$,]/g, '') || '0') },
+      { name: `${key} of Total`, value: parseFloat(value?.toString().replace("$", "").replace(",", "")) },
     ]);
   }, [kpiData]);
 
