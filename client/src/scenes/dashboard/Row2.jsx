@@ -128,7 +128,7 @@ const Row2 = () => {
       >
         <div className="pt-5">
           <h1 className="text-white text-md font-semibold">
-            Operational vs Non-Operational Expenses
+          Campaigns and Targets
           </h1>
         </div>
         <ResponsiveContainer width="100%" height="100%">
@@ -162,26 +162,35 @@ const Row2 = () => {
         className="bg-zinc-800 p-4 border-0 shadow-xl drop-shadow-2xl"
         style={{ gridArea: "f" }}
       >
-        <h2 className="text-white text-lg mb-4">Product Prices vs Expenses</h2>
+        <div className="pt-5">
+          <h1 className="text-white text-md font-semibold">
+          Product Prices vs Expenses
+          </h1>
+        </div>
         <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart margin={{ top: 20, right: 20, bottom: 40, left: 0 }}>
+          <ScatterChart margin={{ top: 8, right: 0, left: -10, bottom: 30 }}>
             <CartesianGrid stroke="#374151" />
             <XAxis
               type="number"
               dataKey="price"
-              tick={{ fill: "white" }}
+              style={{ fontSize: "12px", fontWeight: 500 }}
               tickFormatter={(v) => `$${v}`}
             />
             <YAxis
               type="number"
               dataKey="expense"
-              tick={{ fill: "white" }}
+              style={{ fontSize: "12px", fontWeight: 500 }}
               tickFormatter={(v) => `$${v}`}
             />
             <ZAxis type="number" range={[20]} />
             <Tooltip
-              formatter={(v) => `$${v}`}
-              contentStyle={{ backgroundColor: "#1f2937", color: "white" }}
+              contentStyle={{
+                backgroundColor: "#333",
+                borderRadius: "8px",
+                border: "none",
+                boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+              }}
+              labelStyle={{ color: "#fff", fontWeight: "bold" }}
             />
             <Scatter
               name="Product Expense Ratio"
