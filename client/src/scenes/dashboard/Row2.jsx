@@ -28,30 +28,27 @@ const Row2 = () => {
   const { data: productData } = useGetProductsQuery();
 
   const operationalExpenses = useMemo(() => {
-    return (
-      operationalData?.[0]?.monthlyData?.map(
-        ({ month, operationalExpenses, nonOperationalExpenses }) => ({
-          name: month.substring(0, 3),
-          "Operational Expenses": parseFloat(
-            operationalExpenses?.toString().replace("$", "").replace(",", "")
-          ),
-          "Non Operational Expenses": parseFloat(
-            nonOperationalExpenses?.toString().replace("$", "").replace(",", "")
-          ),
-        })
-      )
+    return operationalData?.[0]?.monthlyData?.map(
+      ({ month, operationalExpenses, nonOperationalExpenses }) => ({
+        name: month.substring(0, 3),
+        "Operational Expenses": parseFloat(
+          operationalExpenses?.toString().replace("$", "").replace(",", "")
+        ),
+        "Non Operational Expenses": parseFloat(
+          nonOperationalExpenses?.toString().replace("$", "").replace(",", "")
+        ),
+      })
     );
   }, [operationalData]);
 
   const productExpenseData = useMemo(() => {
-    return (
-      productData?.map(({ _id, price, expense }) => ({
-        id: _id,
-        price: parseFloat(price?.toString().replace("$", "").replace(",", "")),
-        expense: parseFloat(expense?.toString().replace("$", "").replace(",", "")),
-      }))
-      
-    );
+    return productData?.map(({ _id, price, expense }) => ({
+      id: _id,
+      price: parseFloat(price?.toString().replace("$", "").replace(",", "")),
+      expense: parseFloat(
+        expense?.toString().replace("$", "").replace(",", "")
+      ),
+    }));
   }, [productData]);
 
   return (
@@ -73,7 +70,7 @@ const Row2 = () => {
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={operationalExpenses}
-            margin={{ top: 8, right: 0, left: -10, bottom:30 }}
+            margin={{ top: 8, right: 0, left: -10, bottom: 30 }}
           >
             <CartesianGrid
               stroke="#ffffff33"
@@ -129,14 +126,18 @@ const Row2 = () => {
         className="bg-zinc-800 p-4 border-0 shadow-xl drop-shadow-2xl"
         style={{ gridArea: "e" }}
       >
-        <h2 className="text-white text-lg mb-4">Campaigns and Targets</h2>
+        <div className="pt-5">
+          <h1 className="text-white text-md font-semibold">
+            Operational vs Non-Operational Expenses
+          </h1>
+        </div>
         <ResponsiveContainer width="100%" height="100%">
-          <div className="flex items-center justify-between">
-            <PieChart width={120} height={120}>
+          <div className="flex justify-between mb-2">
+            <PieChart width={70} height={70}>
               <Pie
                 data={pieData}
-                innerRadius={30}
-                outerRadius={50}
+                innerRadius={20}
+                outerRadius={32}
                 dataKey="value"
               >
                 {pieData.map((entry, index) => (
@@ -148,9 +149,9 @@ const Row2 = () => {
               </Pie>
             </PieChart>
             <div className="text-white text-center">
-              <p className="text-lg">Target Sales</p>
-              <p className="text-3xl text-blue-400 font-bold">83</p>
-              <p>Finance goals of the campaign</p>
+              <p className="text-sm">Target Sales</p>
+              <p className="text-2xl text-blue-400 font-bold">83</p>
+              <p className="text-sm">Finance goals of the campaign</p>
             </div>
           </div>
         </ResponsiveContainer>
