@@ -263,7 +263,7 @@ const Row1 = () => {
             margin={{top:-10,
               right: 15,
               left: -5,
-              bottom: 90}}
+              bottom: 62}}
           >
             <defs>
               <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
