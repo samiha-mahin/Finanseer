@@ -24,13 +24,15 @@ const Predictions = () => {
     const monthData = kpiData[0].monthlyData;
     const formatted = monthData
       .map(({ revenue }, i) => {
+         // If “revenue” is a string (like "$5,000"), strip “$” and “,” and turn it into 5000.
+         // Otherwise, use it as-is if it’s already a number.
         const revenueNum =
           typeof revenue === "string"
             ? parseFloat(revenue.replace("$", "").replace(",", ""))
             : revenue;
         return !isNaN(revenueNum) ? [i, revenueNum] : null;
       })
-      .filter((point) => point !== null);
+      .filter((point) => point !== null);  //.filter(point => point !== null);
 
     if (!formatted.length) return [];
 
