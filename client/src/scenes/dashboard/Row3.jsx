@@ -22,20 +22,25 @@ const Row3 = () => {
 
   const pieChartData = useMemo(() => {
     if (!kpiData || kpiData.length === 0) return [];
-
+  
     const totalExpenses = parseFloat(
       kpiData[0]?.totalExpenses?.toString().replace("$", "").replace(",", "")
     );
     const expensesByCategory = kpiData[0]?.expensesByCategory || {};
-
+  
     return Object.entries(expensesByCategory).map(([key, value]) => [
-      { name: key, value: totalExpenses - value },
+      {
+        name: key,
+        value:
+          totalExpenses -
+          parseFloat(value?.toString().replace("$", "").replace(",", "")),
+      },
       {
         name: `${key} of Total`,
         value: parseFloat(value?.toString().replace("$", "").replace(",", "")),
       },
     ]);
-  }, [kpiData]);
+  }, [kpiData]);  
 
   return (
     <>
@@ -130,7 +135,8 @@ const Row3 = () => {
         <div className="flex justify-between gap-3 text-center">
           {pieChartData?.map((data, i) => (
             <div
-              key={`${data[0].name}-${i}`}
+              key={`${data[0].name}-${i}`} 
+              //If data[0].name = "services" and the index i = 0, then the key will be:"services-0"
               className="flex flex-col items-center"
             >
               <PieChart width={80} height={70}>
@@ -145,7 +151,7 @@ const Row3 = () => {
                   {data.map((entry, index) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={index === 0 ? "#4B5563" : "#9CA3AF"}
+                      fill={index === 0 ? "#3b82f6" : "#f43f5e"}
                     />
                   ))}
                 </Pie>

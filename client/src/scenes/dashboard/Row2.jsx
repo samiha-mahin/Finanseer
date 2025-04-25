@@ -135,6 +135,7 @@ const Row2 = () => {
           <div className="flex justify-between mb-2">
             <PieChart width={70} height={70}>
               <Pie
+                stroke="none"
                 data={pieData}
                 innerRadius={20}
                 outerRadius={32}
