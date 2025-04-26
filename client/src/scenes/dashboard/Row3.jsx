@@ -172,9 +172,9 @@ const Row3 = () => {
           Overall Summary and Explanation Data
           </h1>
         </div>
-        <div className="h-3 bg-gray-600 rounded-lg">
+        <div className="h-3 bg-blue-900 rounded-lg">
           <div
-            className="h-3 bg-gray-500 rounded-lg"
+            className="h-3 bg-blue-500 rounded-lg"
             style={{ width: "40%" }}
           ></div>
         </div>
